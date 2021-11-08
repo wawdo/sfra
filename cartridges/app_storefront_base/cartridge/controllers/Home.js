@@ -31,13 +31,18 @@ server.get('Show', consentTracking.consent, cache.applyDefaultCache, function (r
     pageMetaHelper.setPageMetaTags(req.pageMetaData, Site.current);
 
     var page = PageMgr.getPage('homepage');
-
-    if (page && page.isVisible()) {
-        res.page('homepage');
-    } else {
-        res.render('home/homePage');
-    }
+    if(req.currentCustomer.profile) {
+            if (page && page.isVisible()) {
+                res.page('homepage');
+            } else {
+                res.render('home/homePage');
+            }
+        } else {
+            res.setStatusCode(404);
+            res.render('error/notFound');
+        }    
     next();
+    
 }, pageMetaData.computedPageMetaData);
 
 server.get('ErrorNotFound', function (req, res, next) {
