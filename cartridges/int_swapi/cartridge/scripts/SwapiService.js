@@ -6,19 +6,14 @@ function getDeathStarInfo() {
             svc.setRequestMethod("GET");
             return args;
         },
-        parseRequest: function (svc, client) {
-            result = client.text;
-            return {
-                name: result.name,
-                manufacturer: result.manufacturer,
-                starship_class: result.starship_class
-            };
+        parseResponse: function (svc, client) {
+            return client.text;
         },
         filterLogMessage: function(msg){
             return msg.replace(/cost_in_credits\: \".*?\"/, "cost_in_credits:$$$$$$$$$$$$$$$$$$$");
         }
     });
-    var response = getDeathStarInfo.call().object;
+    var response = getSwapiService.call().object;
 
     return response;
 
