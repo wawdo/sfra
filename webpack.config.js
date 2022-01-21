@@ -43,6 +43,11 @@ module.exports = [{
             }
         ]
     },
+    resolve: {
+        alias: {
+            base: path.resolve(__dirname, './cartridges/app_storefront_base/cartridge/client/default/js')
+        }
+    },
     plugins: [new webpack.ProvidePlugin(bootstrapPackages)]
 }, {
     mode: 'none',
@@ -80,6 +85,11 @@ module.exports = [{
                 }]
             })
         }]
+    },
+    resolve: {
+        alias: {
+            base: path.resolve(__dirname, "./cartridges/app_storefront_base/cartridge/client/default/scss")
+        }
     },
     plugins: [
         new ExtractTextPlugin({ filename: '[name].css' })

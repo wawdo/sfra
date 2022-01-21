@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="http://www.demandware.com/xml/impex/library/2006-10-31" library-id="RefArchSharedLibrary">
+    <content content-id="titlenotifybackinstock">
+        <display-name xml:lang="x-default">Title modal notify when back in stock</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="body" xml:lang="x-default">Please, fill your phone number to subscribe for notification</custom-attribute>
+            <custom-attribute attribute-id="body" xml:lang="fr-FR">S'il vous plaît, remplissez votre numéro de téléphone pour vous abonner à la notification</custom-attribute>
+            <custom-attribute attribute-id="body" xml:lang="it-IT">Per favore, inserisci il tuo numero di telefono per iscriverti alla notifica</custom-attribute>
+            <custom-attribute attribute-id="body" xml:lang="ja-JP">通知を購読するには、電話番号を入力してください</custom-attribute>
+            <custom-attribute attribute-id="body" xml:lang="zh-CN">請填寫您的電話號碼以訂閱通知</custom-attribute>
+        </custom-attributes>
+    </content>  
+</library>
