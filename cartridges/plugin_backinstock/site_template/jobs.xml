@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jobs xmlns="http://www.demandware.com/xml/impex/jobs/2015-07-01">
+    <job job-id="NotifyMeBackInStock" priority="0">
+        <description/>
+        <parameters/>
+        <split sequential="false">
+            <contexts template-ref="template_27">
+                <context site-id="RefArch"/>
+                <context site-id="RefArchGlobal"/>
+            </contexts>
+            <flow-template template-id="template_27">
+                <step step-id="NotifyMeBackInStock" type="custom.NotifyMeBackInStock" enforce-restart="false">
+                    <description/>
+                    <parameters/>
+                </step>
+            </flow-template>
+        </split>
+        <rules/>
+        <triggers>
+            <run-recurring enabled="false">
+                <recurrence>
+                    <date-from>2022-01-20Z</date-from>
+                    <start-time>01:13:15.000Z</start-time>
+                    <interval>12h</interval>
+                    <day-of-week/>
+                </recurrence>
+            </run-recurring>
+        </triggers>
+    </job>
+</jobs>

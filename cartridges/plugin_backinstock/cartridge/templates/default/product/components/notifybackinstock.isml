@@ -1,0 +1,40 @@
+<isinclude template="/components/modules" sf-toolkit="off" />
+<div>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#backInStockModal">
+    ${Resource.msg('button.notifybackinstock', 'product', null)}
+    </button>
+</div>
+<div class="modal fade" id="backInStockModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+<div class="modal-dialog" role="document">
+    <div class="modal-content">
+    <div class="modal-header">
+        <h5 class="modal-title" id="modalLabel"><iscontentasset aid="titlenotifybackinstock" /></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="${Resource.msg('link.choiceofbonus.close', 'product', null)}">
+        <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <form action="${URLUtils.url('Twilio-Subscribe')}" class="modal-subscribe-form" method="POST" <isprint value="${pdict.subscribeForm.attributes}" encoding="off" />>
+    <div class="modal-body">
+
+        <div class="form-group
+            ${pdict.subscribeForm.phone.mandatory === true ? 'required' : ''}">
+            <label class="form-control-label" for="phone">
+                <isprint value="${pdict.subscribeForm.phone.label}" encoding="htmlcontent" />
+            </label>
+            <input type="text" class="form-control" id="phone"
+                <isprint value="${pdict.subscribeForm.phone.attributes}" encoding="off" />
+                autocomplete="tel">
+            <div class="invalid-feedback"></div>
+        </div>
+
+        <input type="hidden" value="${product.id}" <isprint value="${pdict.subscribeForm.productId.attributes}" encoding="off" /> />
+    </div>
+    <div class="modal-footer">
+        <div class="succ-msg"></div>
+        <button type="submit" class="btn btn-primary">${Resource.msg('button.modal.notifybackinstock', 'product', null)}</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">${Resource.msg('link.choiceofbonus.close', 'product', null)}</button>
+    </div>
+    </form>
+    </div>
+</div>
+</div>
